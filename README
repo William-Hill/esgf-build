@@ -1,9 +1,13 @@
 Readme doc for setting up build environment and optionally the rsync mirror.
 
 1. Ensure that allrepos.txt is found and current.
+
 2. Ensure that updateall.sh lists all of the components refered to in allrepos.txt.
+
 3. Set value of active_branch in updateall.sh to 'devel' or 'master', depending on what you are building against.
+
 4. Execute updateall.sh, to sequentially checkout the latest commit from the active branch. It also creates the taglist file, which you should check, to see if there are any commits after the last annotated tags.
+
 5. If any retagging is needed, do so. Remember to use annotated tags. 
 git tag -a '<version>' 'message'
 ex: git tag -a 'v1.3.22-centaur-release' 'for whatever release'
@@ -11,7 +15,9 @@ ex: git tag -a 'v1.3.22-centaur-release' 'for whatever release'
 6. Check paths to JAVA and PYTHON installation directories listed in buildall.sh. Use Sun Java 8 and Python 2.7
 
 7. Ensure fulllist in buildall.sh lists all of the components refered to by allrepos.txt and updateall.sh, and execute buildall.sh.
+
 8. Check buildlogs directory for log files to ensure that it's a clean build.
+
 9. Check values of script_maj_version, script_version and script_release in packagedists.sh and execute it.
 
 At this point, you have the packaged tarballs in final-dists. This is ready for extraction and upload to the dist mirror.
